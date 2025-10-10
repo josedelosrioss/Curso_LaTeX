@@ -9,3 +9,12 @@
 
 # Ignorar archivos PDF
 *.pdf
+
+# Ignorar resto de archivos
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.bst
+
