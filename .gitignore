@@ -17,4 +17,8 @@
 *.bbl
 *.blg
 *.bst
+*.fdb_latexmk
+*.out
+*.fls
+
 
