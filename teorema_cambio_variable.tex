@@ -1,0 +1,70 @@
+\documentclass{article}
+
+% Indicamos que el documento va a escribirse en castellano
+\usepackage[spanish]{babel}
+
+% Cargamos un paquete para poder incluir gráficos
+\usepackage{graphicx}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+
+% Activamos los hipervínculos del documento
+\usepackage[hidelinks]{hyperref}
+
+\title{Teorema del cambio de variable en funciones medibles positivas}
+\author{José de los Ríos Piñero}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\newpage
+\newtheorem{teorema}{Teorema}
+\begin{section}{Teorema del cambio de variable en funciones medibles positivas}
+\begin{teorema}[Cambio de Variable para funciones medibles positivas]
+Sea $\phi: \Omega \rightarrow G$ un difeomorfismo de clase $C^1$ entre dos abiertos de $\mathbb{R}^n$. Dado un conjunto medible $E \subset \Omega$ y una funcion medible positiva $f: \phi(E) \rightarrow [0, +\infty]$, consideramos la función $g: E \rightarrow [0, +\infty]$ dada por $g(t) = f(\phi(t)) \lvert \det J\phi(t) \rvert \ \forall \ t \in E$. Entonces $g$ es medible y su integral sobre $E$ coincide con la de $f$ sobre $\phi(E)$, es decir,
+\begin{equation}\label{eq:cambio_variable}
+\int_{\phi(E)} f(x)\,\, \mathrm{d}x = \int_E f(\phi(t))\,\lvert\det J\phi(t)\rvert\,\, \mathrm{d}t.
+\end{equation}
+\end{teorema}
+\begin{proof}
+ Sabemos que $\phi^{-1}$ preserva los conjuntos medibles, por ser una función de clase $C^1$ en $G$. Escribiendo $h(t) = f(\phi(t)) \ \forall t \ \in E$, empezamos viendo que $h$ es medible. Dado un abierto $U \subset [0, +\infty]$, como $f$ es medible, $f^{-1}(U)$ es un subconjunto medible de $\phi(E)$, luego el conjunto $h^{-1}(U) = \phi^{-1}(f^{-1}(U))$ es medible, porque $\phi^{-1}$ preserva los conjuntos medibles. Como la función $t \mapsto \lvert \det J\phi(t) \rvert$ es continua en $E$, luego medible, vemos que $g$ es medible, al ser producto de dos funciones medibles.
+ Usando la siguiente igualdad:
+\begin{equation}\label{eq:igualdad}
+\lambda(\phi(A)) = \int_A \lvert \det J\phi(t) \rvert\,\, \mathrm{d}t, 
+\end{equation}
+obtenemos directamente \eqref{eq:cambio_variable}, pero sustituyendo $f$ por una función característica. Concretamente, para $C \in \mathcal{M}$ tomamos $A = \phi^{-1}(C\cap\phi(E))$, que es un subconjunto medible de $E$. Entonces, tenemos $\phi(A) = C \cap \phi(E)$ y, en particular $\chi_C(\phi(t)) = 1 \ \forall \ t \in A$, mientras que $\chi_C(\phi(t)) = 0 \ \forall \ t \in E\setminus A$. Usando \eqref{eq:igualdad} obtenemos:
+\begin{multline*}
+\int_{\phi(E)} \chi_C(x)\,\, \mathrm{d}x = \lambda(C \cap \phi(E)) = \lambda(\phi(A)) = \int_A \lvert \det J\phi(t) \rvert\,\, \mathrm{d}t \\
+= \int_A \chi_C(\phi(t)) \lvert \det J\phi(t) \rvert\,\, \mathrm{d}t = \int_E \chi_C(\phi(t)) \lvert \det J\phi(t) \rvert\,\, \mathrm{d}t.
+\end{multline*}
+Esto es justo \eqref{eq:cambio_variable} para $f = \chi_C$.
+De forma completamente rutinaria, extendemos el resultado al caso de una función simple positiva $s = \sum_{k=1}^m p_k\chi_{C_k}$, con $m \in \mathbb{N}, p_k \in \mathbb{R}_0^+ y C_k \in \mathcal{M}, k = 1, \dots, m$:
+\begin{multline*}
+\int_{\phi(E)} s(x)\,\, \mathrm{d}x = \sum_{k=1}^m p_k \int_{\phi(E)} \chi_{C_k}(x)\,\, \mathrm{d}x = \sum_{k=1}^m p_k \int_E \chi_{C_k}(\phi(t)) \lvert \det J\phi(t) \rvert\,\ \mathrm{d}t \\
+= \int_E \left(\sum_{k=1}^m p_k \chi_{C_k}(\phi(t))\right) \lvert \det J\phi(t) \rvert\,\, \mathrm{d}t = \int_E s(\phi(t)) \lvert \det J\phi(t) \rvert\,\, \mathrm{d}t.
+\end{multline*}
+El último paso es usar el teorema de aproximación de Lebesgue, que nos da una sucesión $\{s_n\}$ de funciones simples positivas, tal que $\{s_n(x)\}\nearrow f(x) \ \forall \ x \in \phi(E)$. Definimos entonces
+\[
+g_n(t) = s_n(\phi(t)) \lvert \det J\phi(t) \rvert \ \forall \ t \in E, n \in \mathbb{N}.
+\]
+Sabemos que $\{g_n(t)\}$ es una sucesión de funciones medibles positivas, definidas en $E$. Además, para $t \in E$, podemos tomar $x = \phi(t)$ para obtener $\{s_n(\phi(t))\} = \{s_n(x)\} \nearrow f(x) = f(\phi(t))$, de donde deducimos que $\{g_n(t)\} \nearrow g(t) \ \forall \ t \in E$. Así pues, podemos usar el teorema de la convergencia monótona, tanto con las sucesión $\{s_n\}$ como con $\{g_n\}$. Usando también lo ya probado para funciones simples, obtenemos que:
+\begin{multline*}
+\int_{\phi(E)}f(x)\, \mathrm{d} x = \lim_{n\to \infty}\int_{\phi(E)}s_n(x)\, \mathrm{d}x = \lim_{n\to \infty}\int_E s_n(\phi(t)) \lvert \det J\phi(t) \rvert\, \mathrm{d}t \\
+= \lim_{n\to \infty}\int_E g_n(t)\ \mathrm{d}t = \int_E g(t)\, \mathrm{d}t = \int_E f(\phi(t)) \lvert \det J\phi(t) \rvert\, \mathrm{d}t.
+\end{multline*}
+Esto prueba finalmente \eqref{eq:cambio_variable}, lo que concluye la demostración.
+\end{proof}
+\end{section}
+\begin{section}{Bibliografía}
+\begin{itemize}
+    \item Payá Albert, R. (2025). \textit{Temario de Análisis Matemático II, tema 14: Teorema de cambio de variable}. Universidad de Granada. \url{https://www.ugr.es/~rpaya/documentos/AnalisisII/2024-25/Apuntes_14.pdf}
+\end{itemize}
+\end{section}
+
+\end{document}

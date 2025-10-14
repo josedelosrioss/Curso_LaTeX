@@ -12,6 +12,8 @@
 % Activamos los hipervínculos del documento
 \usepackage[hidelinks]{hyperref}
 
+\DeclareMathOperator{\dist}{distancia}
+
 % Añadimos la información sobre título autoría 
 \title{Taller de \LaTeX{} para alumnos del Grado en Matemáticas}
 \author{Los asistentes a dicho curso}
@@ -43,5 +45,105 @@ Sean $x_{1},x_{2},x_{3},\dots, x_{n}$ una sucesión de números reales.
 f(x) = 1+x, \quad (x>0)
 \]
 
+\[
+\lim_{x \to \infty} f(x) = \infty
+\]
+
+\[
+\sum_{\substack{i=1\\j=123}}^{n} \dfrac{i+j}{n} \frac{1}{x}
+\]
+
+\[
+  \left(
+  \begin{array}{lc|r}  % 3 columnas izq., centrada, derecha
+    2 & 3 & \cos(x) \\
+    -1 & 1 & 0 \\
+    2 & 1 &  \\
+  \end{array}
+  \right)
+\]
+
+\[
+  f(x) =
+  \begin{cases}
+   1+x^2, & \text{si $x<0$,}\\
+   e^x,  & \text{si $x>0$,}\\
+   1, & \text{si $x=0$.}
+\end{cases}
+\]
+
+\[
+  \begin{matrix}
+  a_{11} & a_{12} & a_{13} \\
+  a_{21} & a_{22} & a_{23}
+  \end{matrix}
+\]
+
+\[
+  \begin{pmatrix}
+  a_{11} & a_{12} & a_{13} \\
+  a_{21} & a_{22} & a_{23}
+  \end{pmatrix}
+  \quad
+  \begin{bmatrix}
+  a_{11} & a_{12} & a_{13} \\
+  a_{21} & a_{22} & a_{23}
+  \end{bmatrix}
+  \quad
+  \begin{Bmatrix}
+  a_{11} & a_{12} & a_{13} \\
+  a_{21} & a_{22} & a_{23}
+  \end{Bmatrix}
+\]
+
+\[
+f(x) =
+\begin{dcases}
+1+x^2, & \text{si $x<0$,}\\
+\frac{x\sqrt{1+x^2}}{x^2+y^2}, & \text{si } x<0, \\
+2, & \text{en otro caso}
+\end{dcases}
+\]
+
+La matriz $A =
+  \left(
+  \begin{smallmatrix}
+  1 & 2 \\
+  3 & 4
+  \end{smallmatrix}
+  \right)$ se ve bien en una línea
+
+\[
+ \overbrace{a+\underbrace{b+c}_{z}+d}^{n}
+\]
+
+\[
+\dist
+\]
+
+\begin{gather*}
+    a+b=c+d \\
+    z+x=y
+\end{gather*}
+
+\begin{align*}
+x+y & = 6 \\
+2x-3y & = 4
+\end{align*}
+
+\begin{equation}\label{eq:gather}
+    f(x) = \left\{
+        \begin{gathered}
+            x+y+z+f(x)+1+2+3+4 \\
+            +5+6+7+8+9+10
+        \end{gathered}
+        \right\}
+        \iff
+        \begin{aligned}
+            f(x) & = x+y+z+f(x) \\
+                    & \leq x^{32}+\cos{x} \\
+                    & = \sum_{i=1}^{n} x_i
+        \end{aligned}
+\end{equation}
 
 \end{document}
