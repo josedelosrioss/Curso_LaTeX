@@ -20,5 +20,6 @@
 *.fdb_latexmk
 *.out
 *.fls
-
+*.nav
+*.snm
 
