@@ -11,6 +11,12 @@
 \usepackage{amsthm}
 \usepackage{mathtools}
 
+% Guardar el original
+\let\originalnearrow\nearrow
+
+% Redefinir con espacio negativo
+\renewcommand{\nearrow}{\!\!\originalnearrow\!\!}
+
 % Activamos los hipervínculos del documento
 \usepackage[hidelinks]{hyperref}
 
@@ -53,7 +59,7 @@ El último paso es usar el teorema de aproximación de Lebesgue, que nos da una 
 \[
 g_n(t) = s_n(\phi(t)) \lvert \det J\phi(t) \rvert \ \forall \ t \in E, n \in \mathbb{N}.
 \]
-Sabemos que $\{g_n(t)\}$ es una sucesión de funciones medibles positivas, definidas en $E$. Además, para $t \in E$, podemos tomar $x = \phi(t)$ para obtener $\{s_n(\phi(t))\} = \{s_n(x)\} \nearrow f(x) = f(\phi(t))$, de donde deducimos que $\{g_n(t)\} \nearrow g(t) \ \forall \ t \in E$. Así pues, podemos usar el teorema de la convergencia monótona, tanto con las sucesión $\{s_n\}$ como con $\{g_n\}$. Usando también lo ya probado para funciones simples, obtenemos que:
+Sabemos que $\{g_n(t)\}$ es una sucesión de funciones medibles positivas, definidas en $E$. Además, para $t \in E$, podemos tomar $x = \phi(t)$ para obtener $\{s_n(\phi(t))\} = \{s_n(x)\}\nearrow f(x) = f(\phi(t))$, de donde deducimos que $\{g_n(t)\}\nearrow g(t) \ \forall \ t \in E$. Así pues, podemos usar el teorema de la convergencia monótona, tanto con las sucesión $\{s_n\}$ como con $\{g_n\}$. Usando también lo ya probado para funciones simples, obtenemos que:
 \begin{multline*}
 \int_{\phi(E)}f(x)\, \mathrm{d} x = \lim_{n\to \infty}\int_{\phi(E)}s_n(x)\, \mathrm{d}x = \lim_{n\to \infty}\int_E s_n(\phi(t)) \lvert \det J\phi(t) \rvert\, \mathrm{d}t \\
 = \lim_{n\to \infty}\int_E g_n(t)\ \mathrm{d}t = \int_E g(t)\, \mathrm{d}t = \int_E f(\phi(t)) \lvert \det J\phi(t) \rvert\, \mathrm{d}t.
@@ -66,5 +72,6 @@ Esto prueba finalmente \eqref{eq:cambio_variable}, lo que concluye la demostraci
     \item Payá Albert, R. (2025). \textit{Temario de Análisis Matemático II, tema 14: Teorema de cambio de variable}. Universidad de Granada. \url{https://www.ugr.es/~rpaya/documentos/AnalisisII/2024-25/Apuntes_14.pdf}
 \end{itemize}
 \end{section}
+
 
 \end{document}

@@ -1,0 +1,58 @@
+\documentclass{beamer}
+\usetheme{Frankfurt}
+% \usecolortheme{beaver}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+\title{Presentaciones creadas con el paquete Beamer}
+\author{Tu mismo}
+\date{\today}
+\logo{\includegraphics[width=1.5cm]{Graficos/Curso-LaTeX/Graficos/graficos/ugr.png}}
+
+\begin{document}
+%
+\begin{frame}
+\titlepage
+\end{frame}
+%
+\begin{frame}
+\frametitle{Índice de la presentación}
+\tableofcontents
+\end{frame}
+%
+\section{Organización de contenidos usando Beamer}
+%
+% Incluir frames organizados en secciones y/o subsecciones
+%
+\begin{frame}{Beamer admite escritura en \LaTeX\ y más:}
+\begin{enumerate}
+\item Fórmulas: 
+$\max\left\{2^{x+y}\int_a^b e^{\frac{x^2}{2}}\lim_{x\to 1}x^{x-1},1\right\}.$
+\item Resultados Matemáticos:
+\begin{theorem}\label{tonto}
+Las ranas son verdes.
+\end{theorem}
+\item tablas
+\begin{tabular}{|l|c|c|c|} \hline
+Posición & 1 & 2 & 3 \\ \hline \hline
+Nombre & Pepe & Juan & Manuel\\ \hline
+\end{tabular}
+\item y cualquier otro contenido...
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{Encapsulado de contenidos en bloques}
+\begin{block}{Bloque normal}
+Texto en un bloque normal
+\end{block}
+%
+\begin{exampleblock}{Ejemplo}<uncover@2>
+Bloque con un ejemplo: $f(x) = x^2$
+\end{exampleblock}
+%
+\begin{alertblock}<3->{Advertencia}
+¡Ojo con dividir por cero!
+\end{alertblock}
+\end{frame}
+\end{document}

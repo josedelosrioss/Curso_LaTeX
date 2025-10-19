@@ -1,0 +1,44 @@
+\documentclass{article}
+
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+
+\title{Sesión 3. Gráficos}
+\author{José de los Ríos Piñero}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+Test
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+    \centering
+    \includegraphics{Graficos/Curso-LaTeX/Graficos/graficos/ciclista.png}
+    \caption{Un ciclista en acción}
+    \label{fig:ciclista}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Test 2
+\begin{figure}[h]
+    \centering  
+    \includegraphics[angle=270, width=0.45\textwidth]{Graficos/Curso-LaTeX/Graficos/graficos/fig_9.pdf}
+    \put(-50,-120){
+        \includegraphics[scale=0.2, trim=10mm 15mm 8mm 5mm, clip]{Graficos/Curso-LaTeX/Graficos/graficos/ciclista.png}
+    }
+    \caption{Un ciclista en acción editado}
+    \label{fig:ciclista_editado}
+\end{figure}
+
+Como se puede ver en la figura~\ref{fig:ciclista_editado}, el ciclista está en plena acción.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
