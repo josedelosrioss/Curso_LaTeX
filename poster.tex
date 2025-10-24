@@ -10,10 +10,17 @@
 \usepackage{enumerate}
 \usepackage[poster,most]{tcolorbox}
 
+\tcbset{
+    colorframe=red,
+    colorback=blue!10,
+}
 \begin{document}
-	\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Teorema de Pitágoras]
-		\[
-		c^2 = a^2 + b^2
-		\]
-	\end{tcolorbox}
+\begin{tcolorbox}[title={Teoremón}]
+    Texto de prueba
+    \tcblower
+    Más texto de prueba
+    \[
+    E = mc^2
+    \]
+\end{tcolorbox}
 \end{document}

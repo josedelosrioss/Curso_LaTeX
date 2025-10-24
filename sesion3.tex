@@ -6,7 +6,10 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{mathtools}
+\usepackage{lipsum}
 \usepackage[hidelinks]{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{babel,shapes,arrows}
 
 \title{Sesión 3. Gráficos}
 \author{José de los Ríos Piñero}
@@ -26,7 +29,8 @@ Test
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Test 2
+\lipsum{1}
+
 \begin{figure}[h]
     \centering  
     \includegraphics[angle=270, width=0.45\textwidth]{Graficos/Curso-LaTeX/Graficos/graficos/fig_9.pdf}
@@ -39,6 +43,13 @@ Test 2
 
 Como se puede ver en la figura~\ref{fig:ciclista_editado}, el ciclista está en plena acción.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
+\section{Gráficos con TikZ}
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+    \draw[help lines] (0,0) grid (3,3);
+    \draw[->] (0,0) -- (2,2.5);
+    \end{tikzpicture}
+    \caption{Gráfico sencillo con TikZ}
+\end{figure}
 \end{document}
