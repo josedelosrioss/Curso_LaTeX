@@ -1,25 +1,8 @@
-# Ignorar archivos de logs
-*.log
+# Ignora todo menos los .tex
 
-# Ignorar archivos auxiliares
-*.aux
+*
 
-# Ignorar archivos comprimidos
-*.gz
+*/
 
-# Ignorar archivos PDF
-*.pdf
-
-# Ignorar resto de archivos
-*.toc
-*.lof
-*.lot
-*.bbl
-*.blg
-*.bst
-*.fdb_latexmk
-*.out
-*.fls
-*.nav
-*.snm
+!*.tex 
 
